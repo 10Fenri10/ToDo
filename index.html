@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <style>
+        .del{
+        text-decoration: line-through; 
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="topline">
+            <span class="logo">ToDo</span>
+        </div>
+    </header>
+        <form id="form">
+            <input type="text" id="toDoInput">
+            <button type="submit" id="inputbutton" required minlength="0">
+                <div class="CrateToDo">Crate ToDo</div>
+            </button>
+            <div id="container" class="PrioritySelect"></div>
+        </form>
+        <div class="RemakeInput"></div>
+    <div id="ToDolist">
+        
+        <div id="critical">
+            <div class="PrioritiClass">
+                <span>Critical</span>
+            </div>
+        </div>
+        
+        <div id="regular">
+            <div class="PrioritiClass">
+                <span>Regular</span>
+            </div>
+        </div>
+        
+    
+        <div id="minor">
+            <div class="PrioritiClass">
+                <span>Minor</span>
+            </div>
+        </div>
+        
+    </div>
+    
+
+</body>
+<script type="module" src="index.js/main.js"></script>
+</html>
+
