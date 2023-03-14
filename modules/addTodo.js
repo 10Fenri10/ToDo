@@ -13,16 +13,20 @@ const objForAddTodo = {
     event.preventDefault();
     const todoText = toDoInput.value;
     const date = new Date();
-    const RRR = document.querySelector("#priorityId");
-    console.log(RRR.value);
-    const pr = RRR.value;
-    console.log(date);
+    const priority = document.querySelector("#priorityId");
+    console.log(priority.value);
+    const valueForPrio = priority.value;
+
+    const user = document.querySelector("#usersId");
+    console.log(user.value);
+    const valueForWho = user.value;
     const newTodoBody = {
       data: {
-        priority: pr,
+        priority: valueForPrio,
         deu: date,
         title: todoText,
         done: false,
+        who: valueForWho,
         user: {
           id: 1,
           username: "Test user",
@@ -36,6 +40,7 @@ const objForAddTodo = {
         },
       },
     };
+    console.log(newTodoBody);
     createToDo("POST", createurl, newTodoBody, kek).then((a) => {
       getToDoList("GET", createurl, null, kek).then((data) => {
         let todos = data.data;
@@ -49,6 +54,7 @@ const objForAddTodo = {
         let arr2 = deu2.split("T");
         const deu3 = arr2.join(" ");
         const DataTodo = {
+          WhoTodo: lastTodo.attributes.who,
           DoneTodo: lastTodo.attributes.done,
           TitleToDo: lastTodo.attributes.title,
           IdTodo: lastTodo.id,
@@ -62,21 +68,22 @@ const objForAddTodo = {
           <span class="${cssClass}">${DataTodo.TitleToDo}</span>
           
           <div class="ButtonList">
-          <span class="date">${DataTodo.DeuTodo}</span>
-          <div type="button" data-action="done" class='btn-action done'>
+            <div type="button" data-action="userName" class="who">Кому: ${DataTodo.WhoTodo}</div>
+            <span class="date">${DataTodo.DeuTodo}</span>
+            <div type="button" data-action="done" class='btn-action done'>
 
 
-          </div>
-          <div type="button" data-action="update" class='btn-action undone'>
-             
-          </div>
-          <div type="button" data-action="remake" class='btn-action remake'>
-
-          </div>
-          
-          <div type="button" data-action="delete" class='btn-action delete'>
+            </div>
+            <div type="button" data-action="update" class='btn-action undone'>
               
-          </div>
+            </div>
+            <div type="button" data-action="remake" class='btn-action remake'>
+
+            </div>
+            
+            <div type="button" data-action="delete" class='btn-action delete'>
+                
+            </div>
           </div>
           </li>
       </div>`;

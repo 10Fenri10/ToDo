@@ -1,6 +1,6 @@
 const objForPriority = {
-  priorityY: function () {
-    const values = ["minor", "regular", "critical"];
+  prioritySelect: function (arr) {
+    const values = arr;
     let select = document.createElement("select");
     select.name = "priorityNames";
     select.id = "priorityId";
@@ -26,4 +26,4 @@ const objForPriority = {
   },
 };
 
-export const priorityY = objForPriority.priorityY;
+export const prioritySelect = objForPriority.prioritySelect;
